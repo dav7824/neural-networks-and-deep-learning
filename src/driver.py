@@ -1,4 +1,6 @@
-import mnist_loader, network
+import mnist_loader
+#import network
+import network_mat_based as network
 
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 
