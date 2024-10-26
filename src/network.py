@@ -228,7 +228,7 @@ def load(filename):
     data = json.load(f)
     f.close()
     cost = getattr(sys.modules["costfunc"], data["cost"])
-    regu = getattr(sys.modules["regularisation"], data["regularisation"])
+    regu = getattr(sys.modules["regularisation"], data["regularisation"]) if data["regularisation"] else None
     net = Network(data["sizes"], cost=cost, regu=regu)
     net.weights = [np.array(w) for w in data["weights"]]
     net.biases = [np.array(b) for b in data["biases"]]
