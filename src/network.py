@@ -215,7 +215,7 @@ class Network(object):
                 "regularisation": str(self.regu.__name__) if self.regu else None,
                 }
         f = open(filename, "w")
-        json.dump(data, f)
+        json.dump(data, f, indent=4)
         f.close()
 
 
